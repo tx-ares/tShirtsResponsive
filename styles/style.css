@@ -1,0 +1,99 @@
+/*General Styles*****************************/
+* {
+  box-sizing: border-box;
+}
+
+.align-children > * {
+  display:inline-block;
+  vertical-align: top;
+  font-size:large;
+  width:30%;
+}
+
+/*Layout*************************************/
+.container {
+	display:inline-block;
+	width:100%;
+	border: 5px solid red;
+}
+
+img {
+	width:100%
+}
+
+.shirt-box {
+	height:400px;
+	width:25%;
+	display: inline-block;
+	padding:20px 20px 0 20px;
+	border: 5px solid #5CA4D7;
+	color:#5CA4D7;
+}
+
+.icon-container {
+	display: inline-block;
+	border:2px solid purple;
+	height:50px;
+	width:100%;
+}
+
+.iconbox {
+	display:inline-block;
+	border:2px solid blue;
+	height:100%;
+	width:18.5%;
+
+}
+
+.label-container {
+	display:inline-block;
+	border:2px solid green;
+	height:50px;
+	width:100%;
+}
+
+.product-name {
+	display:inline-block;
+	border:2px solid magenta;
+	height:100%;
+	width:49%;
+}
+
+.product-price {
+	display:inline-block;
+	border:2px solid cyan;
+	height:100%;
+	width:49%;
+	text-align:right;
+}
+
+/*Checkbox Styles incomplete***********************/
+
+input[type="checkbox"] {
+	width: 13px;
+    height: 13px;
+    padding-bottom: 20px;
+    margin-left:99%;
+    vertical-align: top;
+    position: relative;
+    top: -20px;
+    *overflow: hidden;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  background: cyan;
+}
+
+input[type="checkbox"]:hover {
+  opacity: 1;
+  background: cyan;
+}
+
+/*Media Query  incomplete*************************/
+
+@media only screen and (max-width:1100px){
+  .shirt-box {
+    display:block;
+    width:80%;
+  }
