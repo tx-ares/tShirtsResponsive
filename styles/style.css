@@ -1,99 +1,285 @@
 /*General Styles*****************************/
 * {
   box-sizing: border-box;
+  font-family: 'arial'
+}
+
+.align-children{
+	font-size:0;
+
 }
 
 .align-children > * {
   display:inline-block;
   vertical-align: top;
   font-size:large;
-  width:30%;
 }
 
-/*Layout*************************************/
+/*Main Layouts*************************************/
 .container {
 	display:inline-block;
 	width:100%;
-	border: 5px solid red;
+}
+
+.img-container {
+	max-width:100%;
+	border: 2px solid #5CA4D7;
+	padding:20px;
+	position: relative;
+	transition: 3s transform ease;
+ 	transform-style: preserve-3d;
 }
 
 img {
-	width:100%
+	position:absolute;
+	width:100%;
+	padding:20px;
 }
 
 .shirt-box {
-	height:400px;
-	width:25%;
+	width:30.0%;
 	display: inline-block;
-	padding:20px 20px 0 20px;
-	border: 5px solid #5CA4D7;
+	position:relative;
+	margin-left: 20px;
 	color:#5CA4D7;
 }
 
 .icon-container {
-	display: inline-block;
-	border:2px solid purple;
-	height:50px;
+	display: block;
+	position: relative;
 	width:100%;
+	font-size: 0;
 }
 
 .iconbox {
-	display:inline-block;
-	border:2px solid blue;
-	height:100%;
-	width:18.5%;
-
+	width:20%;
+	border:2px solid #5CA4D7;
+	line-height:70px;
+	font-size: 30px; 
+	text-align: center;
+	position: relative;
 }
 
 .label-container {
-	display:inline-block;
-	border:2px solid green;
-	height:50px;
+	display:block;
 	width:100%;
+	font-size: 26px;
+}
+
+.label-container > * {
+	display: inline-block;
+	font-family: 'Josefin Sans', sans-serif;
+	margin-top: 10px;
 }
 
 .product-name {
-	display:inline-block;
-	border:2px solid magenta;
-	height:100%;
-	width:49%;
+	width:85%;
+	font-size: 1em; 
 }
 
 .product-price {
-	display:inline-block;
-	border:2px solid cyan;
-	height:100%;
-	width:49%;
+	width:7%;
 	text-align:right;
+	font-size: 1em; 
 }
 
-/*Checkbox Styles incomplete***********************/
+/*Pseudo Selectors******************************/
+.singleIcon:hover {
+	background-color:#5CA4D7;
+	color: #fff;
+}
+
+.switchbox:hover {
+    background-color:#5CA4D7;
+	color: #fff;
+}
+
+.switchbox:focus {
+    background-color:#5CA4D7;
+	color: #fff;
+}
+
+/*Color Select *************************/
+
+.color {
+	position:relative;
+	cursor: pointer;
+	transition: 0.3s all ease;
+}
+
+.fa .swatches {
+	display: inline-block;
+	font-size:20px;
+	text-align: center;
+
+}
+
+.swatchesSelect {
+    position: absolute;
+    width: 100%;
+    /*height: 200px;*/
+    padding: 8px 0;
+    border: 2px solid #5CA4D7;
+    cursor: pointer;
+    background: #fff;
+    /*Animating Property*/
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+
+.swatchesSelect > .fa {
+    margin: 20px auto;
+    display: inline-block;
+    background-size: 100%;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    font-size: 24px;
+}
+
+.red-swatch {
+	color: tomato;
+	transition: 3s all ease;
+}
+
+.green-swatch {
+	color: limegreen;
+	transition: 3s all ease;
+}
+
+.orange-swatch {
+	color: orange;
+	transition: 3s all ease;
+}
+
+.yellow-swatch {
+	color: yellow;
+	transition: 3s all ease;
+}
+
+.iconbox ~ .color:hover > .swatchesSelect {
+	opacity: 1;
+	bottom: 125%;
+}
+
+
+/*SizeSelect************************************/
+
+.sizeSelect {
+    position: absolute;
+    width: 100px;
+    padding: 15px;
+    background: white;
+    border: 2px solid #5CA4D7;
+    color: #5CA4D7;
+    cursor: pointer;
+    bottom: 125%;
+    transition: all 0.3s;
+    left:50%;
+    transform: translateX(-50%);
+    /*Animating Property*/
+    opacity: 0;
+
+}
+
+.size {
+	position:relative;
+	cursor: pointer;
+	transition: 0.3s all ease;
+}
+
+.singleIcon:hover {
+	background: #5CA4D7 ;
+	color: white;
+}
+
+.singleIcon:hover ~ .sizeSelect {
+	bottom:125%;
+	opacity: 1;
+}
+
+.sizeSelect span {
+    margin: 4px auto;
+    display: block;
+    background: url(../images/t-shirt.svg);
+    font-color: #5CA4D7;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: 100%;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    font-size: 12px;
+}
+
+
+/*Shirt Flip Styles & Button****************************/
+
+.shirtImage {
+	margin-top: 40px;
+	transition: 3s transform ease;
+ 	transform-style: preserve-3d;
+}
+
+.frontshirts {
+    position: relative;
+    backface-visibility: hidden;
+}
+
+.backshirts {
+	position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+input[type="checkbox"]:checked ~ .shirtImage {
+  	transform: rotateY(180deg);
+}
+
+/*Checkbox Styles incomplete********/
+
+.switchbox:hover {
+	background: #5CA4D7;
+	color: #fff;
+	transition: 0.3s all ease;
+}
 
 input[type="checkbox"] {
-	width: 13px;
-    height: 13px;
-    padding-bottom: 20px;
-    margin-left:99%;
+    position: absolute;
+    top:0;
+    right:0;
+	opacity: 0;
+}
+
+.switchbox {
+    border-left: 2px solid #5CA4D7;
+    border-bottom: 2px solid #5CA4D7;
+    position: absolute;
+    top: 0;
+    right: 0;
     vertical-align: top;
-    position: relative;
-    top: -20px;
-    *overflow: hidden;
+    font-size: x-large;
+    text-align: center;
+    padding-top: 4px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    color: #5CA4D7;
 }
 
-input[type="checkbox"]:focus {
-  outline: none;
-  background: cyan;
-}
+/*Media Query Complete*************************/
 
-input[type="checkbox"]:hover {
-  opacity: 1;
-  background: cyan;
-}
+@media only screen and (max-width:750px){
 
-/*Media Query  incomplete*************************/
-
-@media only screen and (max-width:1100px){
   .shirt-box {
     display:block;
     width:80%;
+    margin-left:40px;
   }
